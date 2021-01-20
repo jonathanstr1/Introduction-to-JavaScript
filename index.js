@@ -17,7 +17,11 @@ Do the following:
 
    HINT: no function required
 */
-
+let age = 54;
+if(age > 18){
+  console.log(true);
+} else console.log(false);
+console.log(age > 18);
 
 
 /*
@@ -30,7 +34,12 @@ Do the following:
 
    HINT: no function required
 */
-
+let a = 22;
+let b = 54;
+if (b >= 40) {
+  a = 25;
+}
+console.log(b);
 
 
 
@@ -45,7 +54,10 @@ Do the following:
 
    HINT: look up the Number method
 */
-
+let str = "1999";
+let num;
+num = Number(str);
+console.log(a);
 
 
 
@@ -58,10 +70,11 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
-  }
+function multiply(a, b){
+    return a * b;
 
+  }
+multiply(3,4);
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -74,10 +87,11 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
+function dogYears(a){
     /*add your code here*/
+    return a * 7;
 }
-
+dogYears(13);
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -107,10 +121,23 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
+function hungryDog(weight, age){
     /*add your code here*/
+    if (age < .16667){ return "invalid, pup should still be with mom!"}
+    if(age >= 1){
+      if(weight <= 5){ return weight * .05}
+      else if(weight <= 10) { return weight * .04}
+      else if(weight <= 15) { return weight * .03}
+      else return weight * .02
+    }else{
+      if (age < 1){ 
+        if (age <= 1/3) { return weight * .1}
+        else if(age <= 7/12){ return weight * .05}
+        else return weight * .04
+      }
+    }
   }
-
+hungryDog(15, 3);
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -133,10 +160,32 @@ Use the game function below to do the following:
   
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
-
+let compVal = Math.random() * 3;
+compVal = Math.ceil(compVal);
 function game(user, computer){
     /*add your code here*/
+    /*1=rock 2=paper 3=scissors */
+    if(user === 'rock')     {user = 1};
+    if(user === 'paper')    {user = 2};
+    if(user === 'scissors') {user = 3};
+    if(computer === 'rock')     {computer = 1};
+    if(computer === 'paper')    {computer = 2};
+    if(computer === 'scissors') {computer = 3};
+  if(user == 1) {
+    if (computer == 1) {return "it's a tie"}
+    else if(computer == 2) { return "you lose!"}
+    else if(computer == 3) { return "you win!"}
+  }else if (user == 2){
+    if (computer == 1) {return "you win!"}
+    else if(computer == 2) {return "it's a tie"}
+    else if(computer == 3) {return "you lose!"}
+  }else if (user == 3){
+    if (computer == 1) {return "you lose!"}
+    else if(computer == 2) {return "you win!"}
+    else if(computer == 3) {return "it's a tie"}
+  }
 }
+game('scissors','paper');
   
   
 
@@ -151,9 +200,11 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
+function miles(klicks){
     /*add your code here*/
+    return klicks * 0.621371;
   }
+miles(32);
 
 
 
@@ -165,8 +216,10 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
+function feet(cm){
     /*add your code here*/
+    let inches = cm/2.54;
+    return inches/12; 
   }
  
 
@@ -181,9 +234,12 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
+function annoyingSong(start){
+
         /*add your code here*/
+    return `${start} bottles of soda on the wall, ${start} bottles of soda, take one down pass it around ${--start} bottles of soda on the wall`;
   }
+  annoyingSong(5);
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -201,10 +257,16 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
+function grade(score){
   /*Your Code here */
+    if(score < 60) {return 'you got an F'}
+    if(score < 70) {return 'you got a D'}
+    if(score < 80) {return 'you got a C'}
+    if(score < 90) {return 'you got a B'}
+    if(score <= 100) {return 'you got an A'}
+
   }
-  
+  grade(99);
   
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
