@@ -291,6 +291,7 @@ function vowelCounter(stringToCount) {
     }
   i++;
 }
+ 
   console.log(vC);
   return vC;
 }
