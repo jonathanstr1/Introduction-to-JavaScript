@@ -279,10 +279,22 @@ Using the vowelCounter function below do the following:
 */
 
 
-function vowelCounter(/*add your code here*/) {
+function vowelCounter(stringToCount) {
     /*add your code here*/
+  let n = stringToCount.length;
+  let i = 0;
+  let vC = 0;
+  while(i < n){
+    if(stringToCount[i]=== 'a' || stringToCount[i] === 'e' || stringToCount[i] === 'i' || stringToCount[i] === 'o' || stringToCount[i] === 'u') {
+      vC++;
+      
+    }
+  i++;
 }
-
+  console.log(vC);
+  return vC;
+}
+vowelCounter('dotted line');
 
 
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
